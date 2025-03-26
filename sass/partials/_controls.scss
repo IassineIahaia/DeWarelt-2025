@@ -1,0 +1,122 @@
+%control-properties {
+    display: inline-block;
+    transition: padding 0.3s ease-in-out;
+    position: relative;
+    font-family: $font-family-default;
+    font-size: rem(17px);
+    background: $color-white;
+    color: $color-black;
+    padding: rem(16px)  rem(24px) rem(14px) 24px;
+    text-decoration: none;
+    border-radius: 0;
+    line-height: 16px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+%focus-properties {
+    // color: $color-white;
+    // background: $color-black;
+}
+
+.btn-center{
+    text-align: center;
+}
+
+.btn {
+    transition: all 0.2s ease-in-out;
+    @extend %control-properties;
+    &:hover{
+        @extend %focus-properties;
+    }
+}
+
+.btn-bordered{
+    border: 1px solid $color-black;
+    background: transparent;
+    color: $color-black;
+    svg{
+        display: none;
+    }
+    &:hover{
+        background-color: $color-black;
+        color: $color-white;
+    }
+}
+
+.btn-grey{
+    background-color: transparent;
+    padding: rem(16px)  rem(30px) rem(16px) 8px;
+    &::after, &::before{
+        content: '';
+        position: absolute;
+        width: 18px;
+        aspect-ratio: 1 / 1;
+        top: 50%;
+        transform: translateY(-50%);
+        background-image: url(images/chevron-right.svg);
+    }
+    &::after{
+        right: 0px;
+        transition: all 0.4s ease-out;
+    }
+    &::before{
+        left: -10px;
+        transition: all 0.4s ease-out;
+        opacity: 0;
+    }
+
+    span{
+        position: relative;
+        right: 0;
+        transition: right 0.4s ease-in-out;
+    }
+
+    &:hover{
+        span{
+            right: -20px;
+        }
+        &::after{
+            right: -6px;
+            opacity: 0;
+        }
+        &::before{
+            left: 5px;
+            transition: all 0.6s ease-in;
+            opacity: 1;
+        }
+    }
+}
+
+
+form{
+    position: relative;
+    max-width: rem(700px);
+    input[type=text]{
+        background: $color-white;
+        height: rem(60px);
+        padding: rem(20px) rem(30px);
+        border-radius: rem(30px);
+        @include placeholder{
+            color: rgba($color-black, 0.6);
+            font-weight: 400;
+        }
+    }
+    input[type=submit]{
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: $color-black;
+        height: rem(60px);
+        border-radius: rem(30px);
+        color: $color-white;
+        font-weight: 800;
+        padding: 0 rem(30px);
+        text-transform: uppercase;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+
+#site-container .gform_wrapper {}
