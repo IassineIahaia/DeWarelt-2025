@@ -263,6 +263,28 @@
         @include grid-layout(2, 77px, 32px);
     }
 }
+.text-image-reverse{
+    .text-image-content{
+        margin-bottom: 16px;
+        @include grid-column-span(2);
+        @include breakpoint-tablet{
+            @include grid-column-span(1);
+            align-self: center ;
+            p{
+                font-size: 18px;
+            }
+        }
+    }
+    
+    .text-image-image{
+        @include grid-column-span(2);
+        height: 188px;
+        @include breakpoint-tablet{
+            height: auto;
+            @include grid-column-span(1);
+        }
+    }       
+}
 
 .text-image-content{
     margin-bottom: 16px;
@@ -283,6 +305,25 @@
         height: auto;
         @include grid-column-span(1);
     }
+}
+
+.text-image-reverse{
+    .text-image-content{
+        @include grid-column-span(2);
+        @include breakpoint-tablet{
+            @include grid-column-span(1);
+            @include grid-column-start(2);
+        }
+    }
+    
+    .text-image-image{
+        @include grid-column-span(2);
+        @include breakpoint-tablet{
+            @include grid-column-span(1);
+            @include grid-column-start(1);
+            @include grid-row-start(1);
+        }
+    }       
 }
 
 .quote{
@@ -314,8 +355,9 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: $color-black;
+        background: #222222;
         opacity: 50%;
+        mix-blend-mode: lighten;
     }
 }
 .quote-content{
@@ -466,3 +508,4 @@
         }
     }
 }
+
