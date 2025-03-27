@@ -74,3 +74,28 @@ const swiper2 = new Swiper('.swiper2', {
     el: '.swiper-pagination',
   },
 });
+// slider image text
+const swiper3 = new Swiper('.swiper3', {
+    direction: 'horizontal',
+    loop: true,
+    // autoplay: {
+    //   delay: 2000,
+    //   disableOnInteraction: false,
+    // },
+
+    breakpoints: {
+      slidesPerView: 2,
+        1024: {
+            slidesPerView: 4
+          }
+    },
+  
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+
+   pagination: {
+    el: '.swiper-pagination',
+  },
+});
